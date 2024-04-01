@@ -6,6 +6,21 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Ico.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\GAS_____.TTF" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Ico.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\GAS_____.TTF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
 
 </Project>
