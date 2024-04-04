@@ -1,6 +1,7 @@
 ﻿using ClienteServidorProyectoU2.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -16,6 +17,7 @@ namespace ClienteServidorProyectoU2.Services
 
         public VmsServer()
         {
+            //netsh add http urlacl "http://*:5400/VMS/" user = Todos
             server.Prefixes.Add("http://*:5400/VMS/");
         }
 
@@ -36,7 +38,10 @@ namespace ClienteServidorProyectoU2.Services
             while (true)
             {
                 var context = server.GetContext();
-                var page = System.IO.File.ReadAllText("assets/Index.html");
+                var page = File.ReadAllText("assets/index.html");
+                //var indexPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                //    "assets", "index.html"); 
+                //var page = File.ReadAllText(indexPath);
                 var bufferPage=Encoding.UTF8.GetBytes(page);
 
                 if(context.Request.Url != null)
@@ -60,8 +65,7 @@ namespace ClienteServidorProyectoU2.Services
 
                         Vms message = new()
                         {
-                            Texto = (dictionary["Texto"]??"").ToUpper(),
-                            Usuario = context.Request.RemoteEndPoint.Address.ToString().ToUpper()
+                            Texto = (dictionary["Texto"]??"").ToUpper()
                         };
 
                         Application.Current.Dispatcher.Invoke(() => 
@@ -69,8 +73,8 @@ namespace ClienteServidorProyectoU2.Services
                             MensajeRecibido?.Invoke(this, message);
                         });
 
-                        context.Response.StatusCode = 200;
-                        context.Response.Close();
+                        //context.Response.StatusCode = 200;
+                        //context.Response.Close();
                     }
                     else
                     {

@@ -3,14 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ClienteServidorProyectoU2.Views"
+        xmlns:local="clr-namespace:ClienteServidorProyectoU2.Views" 
+        xmlns:vm="clr-namespace:ClienteServidorProyectoU2.ViewModels"
         mc:Ignorable="d"
         WindowStyle="None"
         Height="650" Width="1000" 
         ResizeMode="NoResize"    
         Background="Transparent"
         WindowStartupLocation="CenterScreen">
-
+    <Window.DataContext>
+        <vm:VmsViewModel></vm:VmsViewModel>
+    </Window.DataContext>
 
     <Border Style="{StaticResource  brdPrincipal}">
         <Border Style="{StaticResource brdSecundario}">
@@ -25,9 +28,7 @@
                     USUARIO: <Run>NOMBRE DE USUARIO</Run>
                 </TextBlock>
                 <StackPanel VerticalAlignment="Center" Margin="20,0">
-                     <TextBlock Foreground="#16E024"  TextAlignment="Center" TextWrapping="Wrap" FontSize="50" >
-                          Accidente A 500 KM, MANEJE CON PRECAUCIÓN
-                </TextBlock>
+                    <TextBlock Foreground="#16E024"  TextAlignment="Center" TextWrapping="Wrap" FontSize="50" Text="{Binding Vms.Texto}" ></TextBlock>
 
                 </StackPanel>
 

@@ -21,7 +21,7 @@ body {
     box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 h1 {
-    margin: 0 0 0 20;
+    margin: 0 0 0 20px;
     color: #333;
 }
 form{
@@ -40,7 +40,6 @@ input[type="text"]{
     border: 1px solid #ccc;
     border-radius: 4px;
     text-align: justify;
-    text-wrap: wrap;
 }
 
 input[type="submit"] {

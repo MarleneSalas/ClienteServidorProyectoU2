@@ -11,10 +11,17 @@
 
   <ItemGroup>
     <None Remove="Assets\GAS_____.TTF" />
+    <None Remove="Assets\index.html" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Ico.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>

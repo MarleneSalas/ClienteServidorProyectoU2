@@ -13,7 +13,7 @@ namespace ClienteServidorProyectoU2.ViewModels
 {
     public class VmsViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Vms> Mensajes { get; set; } = new();
+        public Vms Vms { get; set; } = new();
 
         public string IP
         {
@@ -34,9 +34,11 @@ namespace ClienteServidorProyectoU2.ViewModels
 
         private void Server_MensajeRecibido(object? sender, Vms e)
         {
-            Mensajes.Add(e);
+            Vms = e;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Vms"));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
+
     }
 }
