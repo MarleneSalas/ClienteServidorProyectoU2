@@ -19,13 +19,11 @@
         <Border Style="{StaticResource brdSecundario}">
             <DockPanel Style="{StaticResource dckPanel}">
                 <DockPanel DockPanel.Dock="Bottom"  Margin="10" >
-
                     <Button Style="{StaticResource btnCerrar}"  DockPanel.Dock="Left" Click="Button_Click" Width="100" HorizontalAlignment="Left"/>
                 </DockPanel>
 
                 <StackPanel VerticalAlignment="Center" Margin="20,0">
                     <TextBlock Foreground="#16E024"  TextAlignment="Center" TextWrapping="Wrap" FontSize="110" Text="{Binding Vms.Texto}" ></TextBlock>
-
                 </StackPanel>
 
                
