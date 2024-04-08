@@ -39,9 +39,6 @@ namespace ClienteServidorProyectoU2.Services
             {
                 var context = server.GetContext();
                 var page = File.ReadAllText("assets/index.html");
-                //var indexPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                //    "assets", "index.html"); 
-                //var page = File.ReadAllText(indexPath);
                 var bufferPage=Encoding.UTF8.GetBytes(page);
 
                 if(context.Request.Url != null)
@@ -58,7 +55,10 @@ namespace ClienteServidorProyectoU2.Services
                         var bufferData = new byte[context.Request.ContentLength64];
                         context.Request.InputStream.Read(bufferData,0,bufferData.Length);
                         var data = Encoding.UTF8.GetString(bufferData);
+                        string referer = context.Request.Headers["Referer"]?? "";
+
                         context.Response.StatusCode=200;
+                        context.Response.Redirect(referer);
                         context.Response.Close();
 
                         var dictionary = HttpUtility.ParseQueryString(data);
@@ -72,9 +72,6 @@ namespace ClienteServidorProyectoU2.Services
                         {
                             MensajeRecibido?.Invoke(this, message);
                         });
-
-                        //context.Response.StatusCode = 200;
-                        //context.Response.Close();
                     }
                     else
                     {

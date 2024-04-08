@@ -19,16 +19,12 @@
         <Border Style="{StaticResource brdSecundario}">
             <DockPanel Style="{StaticResource dckPanel}">
                 <DockPanel DockPanel.Dock="Bottom"  Margin="10" >
-                    <Button Style="{StaticResource btnSiguiente}" DockPanel.Dock="Right"/>
 
                     <Button Style="{StaticResource btnCerrar}"  DockPanel.Dock="Left" Click="Button_Click" Width="100" HorizontalAlignment="Left"/>
                 </DockPanel>
 
-                <TextBlock DockPanel.Dock="Top" FontSize="30" Foreground="White" Margin="10" HorizontalAlignment="Right">
-                    USUARIO: <Run>NOMBRE DE USUARIO</Run>
-                </TextBlock>
                 <StackPanel VerticalAlignment="Center" Margin="20,0">
-                    <TextBlock Foreground="#16E024"  TextAlignment="Center" TextWrapping="Wrap" FontSize="50" Text="{Binding Vms.Texto}" ></TextBlock>
+                    <TextBlock Foreground="#16E024"  TextAlignment="Center" TextWrapping="Wrap" FontSize="110" Text="{Binding Vms.Texto}" ></TextBlock>
 
                 </StackPanel>
 
