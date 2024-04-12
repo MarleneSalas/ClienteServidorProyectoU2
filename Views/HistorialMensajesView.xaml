@@ -15,9 +15,12 @@
             </TextBlock>
 
 
-            <ListBox ItemsSource="{Binding ListaMensajes}">
+            <ScrollViewer VerticalScrollBarVisibility="Visible" Height="500" >
+                <ListBox ItemsSource="{Binding ListaMensajes}" SelectedItem="{Binding VmsNvo}" Height="auto">
 
             </ListBox>
+            </ScrollViewer>
+            
         </StackPanel>
     </Border>
 </UserControl>

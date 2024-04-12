@@ -101,6 +101,7 @@ namespace ClienteServidorProyectoU2.Services
 
                         Vms message = new()
                         {
+                            Fecha = DateTime.Now,
                             Texto = (dictionary["Texto"]??"").ToUpper()
                         };
 

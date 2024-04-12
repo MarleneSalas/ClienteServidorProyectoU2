@@ -8,6 +8,7 @@ namespace ClienteServidorProyectoU2.Models
 {
     public class Vms
     {
+        public DateTime Fecha { get; set; }
         public string Texto { get; set; } = null!;
     }
 }

@@ -37,6 +37,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"></Setter>
                                 <Setter TargetName="brdTexto" Property="Background" Value="#F2BB16"></Setter>
                                 <Setter TargetName="txtMensaje" Property="Foreground"  Value="White"></Setter>
                                 <Setter TargetName="txtMensaje" Property="FontWeight"  Value="Bold"></Setter>
