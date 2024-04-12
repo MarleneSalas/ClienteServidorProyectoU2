@@ -21,31 +21,9 @@
             <ColumnDefinition Width=".75*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Border Style="{StaticResource brdMensajes}">
-            <StackPanel>
-                <TextBlock Style="{StaticResource txtLista}"
-                           FontSize="30" TextWrapping="Wrap" TextAlignment="Center"
-                           Foreground="DarkRed" FontWeight="Black" Margin="0,0,0,10">
-                    MENSAJES RECIBIDOS
-                </TextBlock>
-
-         
-                <ListBox ItemsSource="{Binding ListaMensajes}">
-                   
-                    <!--<ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock  Text="{Binding Texto}"
-                                    Style="{StaticResource txtLista}"
-                                    FontSize="20"></TextBlock>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>-->
-                </ListBox>
-            </StackPanel>
-
-        </Border>
-
+        <local:HistorialMensajesView></local:HistorialMensajesView>
+        
         <local:VmsView Grid.Column="1"></local:VmsView>
-
     </Grid>
 
 </Window>

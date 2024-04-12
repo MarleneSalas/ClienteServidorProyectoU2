@@ -30,7 +30,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
-                        <Border Name="brdTexto" CornerRadius="5" Margin="0,5,0,0" Padding="5">
+                        <Border Name="brdTexto" CornerRadius="5" Margin="0,5,0,0" Padding="5" Background="LightGoldenrodYellow">
                             <TextBlock Name="txtMensaje" Text="{Binding Texto}" Style="{StaticResource txtLista}"
                                        FontSize="15"
                                        Foreground="Black"></TextBlock>
