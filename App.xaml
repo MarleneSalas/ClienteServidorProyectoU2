@@ -27,18 +27,26 @@
         </Style>
 
         <Style TargetType="ListBoxItem">
+            <Setter Property="Width" Value="250"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
-                        <Border Name="brdTexto" CornerRadius="5" Margin="0,5,0,0" Padding="5" Background="LightGoldenrodYellow">
+                        <Border Name="brdTexto" CornerRadius="5" Margin="0,5,0,0" 
+                                Padding="5" Background="LightGoldenrodYellow">
                             <TextBlock Name="txtMensaje" Text="{Binding Texto}" Style="{StaticResource txtLista}"
                                        FontSize="15"
+                                       TextWrapping="Wrap"
                                        Foreground="Black"></TextBlock>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Cursor" Value="Hand"></Setter>
                                 <Setter TargetName="brdTexto" Property="Background" Value="#F2BB16"></Setter>
+                                <Setter TargetName="txtMensaje" Property="Foreground"  Value="White"></Setter>
+                                <Setter TargetName="txtMensaje" Property="FontWeight"  Value="Bold"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="brdTexto" Property="Background" Value="#F28705"></Setter>
                                 <Setter TargetName="txtMensaje" Property="Foreground"  Value="White"></Setter>
                                 <Setter TargetName="txtMensaje" Property="FontWeight"  Value="Bold"></Setter>
                             </Trigger>
