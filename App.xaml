@@ -4,8 +4,53 @@
              xmlns:local="clr-namespace:ClienteServidorProyectoU2"
              StartupUri="Views/PrincipalView.xaml">
     <Application.Resources>
+        <Style TargetType="Border" x:Key="brdMensajes">
+            <Setter Property="Padding" Value="10,20"></Setter>
+            <Setter Property="CornerRadius" Value="5,0,0,5"></Setter>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="White" Offset="0.5"></GradientStop>
+                        <GradientStop Color="LightGray" Offset="1"></GradientStop>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="ListBox">
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="txtLista">
+            <Setter Property="FontFamily" Value="Arial"></Setter>
+        </Style>
+
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border Name="brdTexto" CornerRadius="5" Margin="0,5,0,0" Padding="5">
+                            <TextBlock Name="txtMensaje" Text="{Binding Texto}" Style="{StaticResource txtLista}"
+                                       FontSize="15"
+                                       Foreground="Black"></TextBlock>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"></Setter>
+                                <Setter TargetName="brdTexto" Property="Background" Value="#F2BB16"></Setter>
+                                <Setter TargetName="txtMensaje" Property="Foreground"  Value="White"></Setter>
+                                <Setter TargetName="txtMensaje" Property="FontWeight"  Value="Bold"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
         <Style TargetType="Border" x:Key="brdPrincipal">
-            <Setter Property="CornerRadius" Value="1"></Setter>
+            <Setter Property="CornerRadius" Value="0,1,1,0"></Setter>
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">

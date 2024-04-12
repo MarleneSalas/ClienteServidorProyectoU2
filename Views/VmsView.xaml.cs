@@ -10,18 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ClienteServidorProyectoU2.Views
 {
     /// <summary>
-    /// Lógica de interacción para PrincipalView.xaml
+    /// Lógica de interacción para VmsView.xaml
     /// </summary>
-    public partial class PrincipalView : Window
+    public partial class VmsView : UserControl
     {
-        public PrincipalView()
+        public VmsView()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow?.Close();
         }
     }
 }

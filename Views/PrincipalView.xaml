@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:ClienteServidorProyectoU2.ViewModels"
         mc:Ignorable="d"
         WindowStyle="None"
-        Height="650" Width="1000" 
+        Height="650" Width="1200" 
         ResizeMode="NoResize"    
         Background="Transparent"
         WindowStartupLocation="CenterScreen">
@@ -15,20 +15,37 @@
         <vm:VmsViewModel></vm:VmsViewModel>
     </Window.DataContext>
 
-    <Border Style="{StaticResource  brdPrincipal}">
-        <Border Style="{StaticResource brdSecundario}">
-            <DockPanel Style="{StaticResource dckPanel}">
-                <DockPanel DockPanel.Dock="Bottom"  Margin="10" >
-                    <Button Style="{StaticResource btnCerrar}"  DockPanel.Dock="Left" Click="Button_Click" Width="100" HorizontalAlignment="Left"/>
-                </DockPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".25*"></ColumnDefinition>
+            <ColumnDefinition Width=".75*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
-                <StackPanel VerticalAlignment="Center" Margin="20,0">
-                    <TextBlock Foreground="#16E024"  TextAlignment="Center" TextWrapping="Wrap" FontSize="110" Text="{Binding Vms.Texto}" ></TextBlock>
-                </StackPanel>
+        <Border Style="{StaticResource brdMensajes}">
+            <StackPanel>
+                <TextBlock Style="{StaticResource txtLista}"
+                           FontSize="30" TextWrapping="Wrap" TextAlignment="Center"
+                           Foreground="DarkRed" FontWeight="Black" Margin="0,0,0,10">
+                    MENSAJES RECIBIDOS
+                </TextBlock>
 
-               
-            </DockPanel>
+         
+                <ListBox ItemsSource="{Binding ListaMensajes}">
+                   
+                    <!--<ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock  Text="{Binding Texto}"
+                                    Style="{StaticResource txtLista}"
+                                    FontSize="20"></TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>-->
+                </ListBox>
+            </StackPanel>
+
         </Border>
-    </Border>
+
+        <local:VmsView Grid.Column="1"></local:VmsView>
+
+    </Grid>
 
 </Window>

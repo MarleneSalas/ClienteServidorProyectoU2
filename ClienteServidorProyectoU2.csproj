@@ -27,6 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Assets\GAS_____.TTF">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
