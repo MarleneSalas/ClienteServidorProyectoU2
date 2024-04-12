@@ -61,7 +61,10 @@ namespace ClienteServidorProyectoU2.ViewModels
         private void Server_MensajeRecibido(object? sender, Vms e)
         {
             VmsNvo = e;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Vms"));
+            ListaMensajes.Add(e);
+
+            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Vms"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("VmsNvo"));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
